@@ -12,6 +12,14 @@ ActiveAdmin.register Newsofgame do
 #   permitted
 # end
 
-permit_params :text, :desc
+permit_params :text, :desc, photos: []
+form(html: { multipart: true }) do |f|
+    f.inputs do
+      f.input :text
+      f.input :desc
+      f.file_field :photos, multiple: true
+    end
+   f.actions
+end
 
 end

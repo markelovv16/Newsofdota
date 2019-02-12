@@ -1,4 +1,6 @@
- <%= @newsofgame.text %><br/>
-
- <%= @newsofgame.desc %><br/>
- 
+ <br>
+ <h1><%= @newsofgame.text %></h1><br/>
+ <h1><%= @newsofgame.desc %><h1><br/>
+ <% @newsofgame.photos.each do |photo| %>
+  <%= image_tag(photo.url, style: "width: 750px;") %><br>
+<% end %>
